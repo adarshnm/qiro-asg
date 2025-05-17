@@ -42,8 +42,11 @@ function Deposit() {
             </div>
             <div className="flex flex-row items-center justify-between">
               <p className="font-normal text-[#AFB4C0]">$0</p>
-              <div className="flex flex-row gap-2">
-                <p className="text-[#6C6C6C]">Max</p>
+              <div className="flex flex-row items-center justify-center gap-2">
+                <p className="font-normal text-[#AFB4C0]">0.00 USDC</p>
+                <p className="bg-accent/5 rounded-md px-3 text-sm font-bold text-[#7052E7]">
+                  MAX
+                </p>
               </div>
             </div>
           </CardContent>
