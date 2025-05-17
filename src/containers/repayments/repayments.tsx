@@ -1,16 +1,13 @@
-"use client";
-import { Card, CardContent } from "@/components/ui/card";
+"use client"
+import { Card, CardContent } from "@/components/ui/card"
 import {
   ChartConfig,
   ChartContainer,
-  ChartLegend,
-  ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import React, { SVGProps } from "react";
+} from "@/components/ui/chart"
+import { cn } from "@/lib/utils"
+import React, { SVGProps } from "react"
 import {
   BarChart,
   CartesianGrid,
@@ -18,12 +15,11 @@ import {
   Bar,
   YAxis,
   Rectangle,
-  BarProps,
   RectangleProps,
-} from "recharts";
+} from "recharts"
 
 interface RepaymentTimelineProps {
-  className?: string;
+  className?: string
 }
 
 const timelineChartData = [
@@ -38,15 +34,15 @@ const timelineChartData = [
   { date: "11 May", completed: false, value: 2 },
   { date: "26 May", completed: false, value: 4 },
   { date: "11 Jun", completed: false, value: 4 },
-];
+]
 
 const chartConfig = {
   value: {
     color: "#7052E7",
   },
-} satisfies ChartConfig;
+} satisfies ChartConfig
 
-type ChartDataShape = Partial<(typeof timelineChartData)[0]>;
+type ChartDataShape = Partial<(typeof timelineChartData)[0]>
 
 const CustomBarShape = (
   props: Omit<SVGProps<SVGPathElement>, "radius"> &
@@ -59,8 +55,8 @@ const CustomBarShape = (
       radius={6}
       fill={props.completed ? props.fill : "#C8BAFF"}
     />
-  );
-};
+  )
+}
 
 export function RepaymentTimeline({ className }: RepaymentTimelineProps) {
   return (
@@ -91,11 +87,11 @@ export function RepaymentTimeline({ className }: RepaymentTimelineProps) {
         </BarChart>
       </ChartContainer>
     </div>
-  );
+  )
 }
 
 interface RepaymentTableProps {
-  className?: string;
+  className?: string
 }
 
 export function RepaymentTable({ className }: RepaymentTableProps) {
@@ -124,7 +120,7 @@ export function RepaymentTable({ className }: RepaymentTableProps) {
       amount: "$10,000",
       status: "Upcoming",
     },
-  ];
+  ]
 
   return (
     <div
@@ -165,14 +161,10 @@ export function RepaymentTable({ className }: RepaymentTableProps) {
         </tbody>
       </table>
     </div>
-  );
+  )
 }
 
-interface RepaymentsProps {
-  className?: string;
-}
-
-export function Repayments({ className }: RepaymentsProps) {
+export function Repayments() {
   return (
     <Card className="border">
       <CardContent className="flex flex-col gap-4">
@@ -180,5 +172,5 @@ export function Repayments({ className }: RepaymentsProps) {
         <RepaymentTable />
       </CardContent>
     </Card>
-  );
+  )
 }

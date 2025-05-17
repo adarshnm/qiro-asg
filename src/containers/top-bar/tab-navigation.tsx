@@ -1,19 +1,18 @@
-"use client";
-import * as React from "react";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-import JoinLeftIcon from "@/icons/join-left";
-import JoinInnerIcon from "@/icons/join-inner";
+"use client"
+import * as React from "react"
+import { cn } from "@/lib/utils"
+import JoinLeftIcon from "@/icons/join-left"
+import JoinInnerIcon from "@/icons/join-inner"
 
 export interface TabItem {
-  label: string;
-  Icon: (props: React.SVGProps<SVGSVGElement>) => React.JSX.Element;
-  isActive?: boolean;
+  label: string
+  Icon: (props: React.SVGProps<SVGSVGElement>) => React.JSX.Element
+  isActive?: boolean
 }
 
 interface TabNavigationProps {
-  onTabChange?: (index: number) => void;
-  className?: string;
+  onTabChange?: (index: number) => void
+  className?: string
 }
 
 const tabs: TabItem[] = [
@@ -26,17 +25,17 @@ const tabs: TabItem[] = [
     label: "Position",
     Icon: JoinInnerIcon,
   },
-];
+]
 
 export function TabNavigation({ onTabChange, className }: TabNavigationProps) {
   const [activeTab, setActiveTab] = React.useState(
     tabs.findIndex((tab) => tab.isActive) || 0,
-  );
+  )
 
   const handleTabClick = (index: number) => {
-    setActiveTab(index);
-    onTabChange?.(index);
-  };
+    setActiveTab(index)
+    onTabChange?.(index)
+  }
 
   return (
     <div className={cn("w-full", className)}>
@@ -70,5 +69,5 @@ export function TabNavigation({ onTabChange, className }: TabNavigationProps) {
         ))}
       </div>
     </div>
-  );
+  )
 }

@@ -1,20 +1,19 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import React from "react";
+import { Card, CardContent } from "@/components/ui/card"
+import { cn } from "@/lib/utils"
+import Image from "next/image"
+import React from "react"
 
 interface HighlightCardProps {
-  icon: string;
-  title: string;
-  description: string;
-  className?: string;
+  icon: string
+  title: string
+  description: string
+  className?: string
 }
 
 export function HighlightCard({
   icon,
   title,
   description,
-  className,
 }: HighlightCardProps) {
   return (
     <Card className="rounded-[18px]">
@@ -28,11 +27,11 @@ export function HighlightCard({
         <p className="text-body-text text-sm/7 text-[#756F8B]">{description}</p>
       </CardContent>
     </Card>
-  );
+  )
 }
 
 interface HighlightsProps {
-  className?: string;
+  className?: string
 }
 
 const highlights: HighlightCardProps[] = [
@@ -60,7 +59,7 @@ const highlights: HighlightCardProps[] = [
     description:
       "Investors receive quarterly financial reports and real-time loan tracking. Data rooms provide access to borrower financials and risk metrics.",
   },
-];
+]
 
 export function Highlights({ className }: HighlightsProps) {
   return (
@@ -74,5 +73,5 @@ export function Highlights({ className }: HighlightsProps) {
         />
       ))}
     </div>
-  );
+  )
 }

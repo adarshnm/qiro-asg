@@ -1,18 +1,17 @@
-"use client";
-import { ChartConfig, ChartContainer } from "@/components/ui/chart";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import React from "react";
-import { Cell, Pie, PieChart } from "recharts";
-import DataTileContainer from "../data-tile-container";
+"use client"
+import { ChartConfig, ChartContainer } from "@/components/ui/chart"
+import { cn } from "@/lib/utils"
+import React from "react"
+import { Cell, Pie, PieChart } from "recharts"
+import DataTileContainer from "../data-tile-container"
 
 interface TrancheSummaryProps {
-  type: "senior" | "junior";
-  yield: string;
-  allocation: string;
-  apy: string;
-  tvl: string;
-  className?: string;
+  type: "senior" | "junior"
+  yield: string
+  allocation: string
+  apy: string
+  tvl: string
+  className?: string
 }
 
 export function TrancheSummary({
@@ -52,16 +51,16 @@ export function TrancheSummary({
         valueClassName="text-base"
       />
     </div>
-  );
+  )
 }
 
 interface StructureDetailsProps {
   rows: {
-    label: string;
-    value: string | React.ReactNode;
-    underline?: boolean;
-  }[];
-  className?: string;
+    label: string
+    value: string | React.ReactNode
+    underline?: boolean
+  }[]
+  className?: string
 }
 
 export function StructureDetails({ rows, className }: StructureDetailsProps) {
@@ -103,18 +102,18 @@ export function StructureDetails({ rows, className }: StructureDetailsProps) {
         </tbody>
       </table>
     </div>
-  );
+  )
 }
 
 interface StructureProps {
-  className?: string;
+  className?: string
 }
 
 const chartConfig = {
   value: {
     color: "#7052E7",
   },
-} satisfies ChartConfig;
+} satisfies ChartConfig
 
 const data = [
   {
@@ -127,7 +126,7 @@ const data = [
     value: 20,
     fill: "#CCB3E6",
   },
-];
+]
 
 export function Structure({ className }: StructureProps) {
   return (
@@ -196,5 +195,5 @@ export function Structure({ className }: StructureProps) {
         ]}
       />
     </div>
-  );
+  )
 }

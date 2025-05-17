@@ -1,15 +1,15 @@
-import * as React from "react";
-import { cn } from "@/lib/utils";
-import { QiroLogo } from "./qiro-logo";
-import { TabNavigation, type TabItem } from "./tab-navigation";
-import { BellButton } from "./bell-button";
-import { AddressButton } from "./address-button";
-import { AvatarChip } from "./avatar-chip";
+import * as React from "react"
+import { cn } from "@/lib/utils"
+import { QiroLogo } from "./qiro-logo"
+import { TabNavigation } from "./tab-navigation"
+import { BellButton } from "./bell-button"
+import { AddressButton } from "./address-button"
+import { AvatarChip } from "./avatar-chip"
 
 interface TopAppBarProps {
-  className?: string;
-  walletAddress?: string;
-  userInitials?: string;
+  className?: string
+  walletAddress?: string
+  userInitials?: string
 }
 
 export function TopAppBar({
@@ -32,5 +32,5 @@ export function TopAppBar({
         </div>
       </div>
     </header>
-  );
+  )
 }

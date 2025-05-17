@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Image from "next/image"
-import {
-  Dialog,
-  DialogContent,
-  DialogClose,
-  DialogTitle,
-} from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
 
